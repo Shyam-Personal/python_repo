@@ -1,0 +1,228 @@
+================== Calsoft ===============================
+1) Data types in python
+Ans: String, tuples, numbers, list, sets, dictionary
+2) Difference between list & tuple..Performance related & how we can proove that it is faster?
+Ans: Answer: a tuple made out of constant literals can easily be identified by the Python compiler as being one, immutable constant literal itself: 
+	 so it's essentially built just once, when the compiler turns the source into bytecodes, and stashed away in the "constants table" 
+	 of the relevant function or module. When those bytecodes execute, they just need to recover the pre-built constant tuple -- hey presto!-)
+	 Proove: 
+	    $ python3.1 -mtimeit -s'x,y,z=1,2,3' '[x,y,z]'
+		1000000 loops, best of 3: 0.379 usec per loop
+		$ python3.1 -mtimeit '[1,2,3]'
+		1000000 loops, best of 3: 0.413 usec per loop
+
+		$ python3.1 -mtimeit -s'x,y,z=1,2,3' '(x,y,z)'
+		10000000 loops, best of 3: 0.174 usec per loop
+		$ python3.1 -mtimeit '(1,2,3)'
+		10000000 loops, best of 3: 0.0602 usec per loop
+
+		$ python2.6 -mtimeit -s'x,y,z=1,2,3' '[x,y,z]'
+		1000000 loops, best of 3: 0.352 usec per loop
+		$ python2.6 -mtimeit '[1,2,3]'
+		1000000 loops, best of 3: 0.358 usec per loop
+
+		$ python2.6 -mtimeit -s'x,y,z=1,2,3' '(x,y,z)'
+		10000000 loops, best of 3: 0.157 usec per loop
+		$ python2.6 -mtimeit '(1,2,3)'
+		10000000 loops, best of 3: 0.0527 usec per loop
+		
+3) what is set? Is mutable or immutable? How we can you make the set immutable?
+Ans: Set is mutable. We can use frozensets in python. Frozenset is type of set whioch is immutable.
+4) What is multi threading & multi processing? Which is faster?
+5) Python is interpreted or compiled language?
+Ans: Python is byte code interpreted language. Java is interpreted & c is compiled language
+6) When the .pyc files get generated? If I have one file test.py & have only print statements in it? If I execute the pythn file, will the .pyc file get generated?
+Ans: Only when you import that file into another file. otherwise it doesn't get created.
+7) If I want to make the directory as package how we can do that?
+Ans: Create empty __init__.py file in it.
+8) Can we write anything into __init__.py file? If I have method in  __init__.py file. How we can access that method?
+Ans: import test --> with this we can't access the method in the __init__.py file.
+	from test import test_method --> test_method is name of method defined in __init__.py file. like this we can import & then call that method directly.
+9) What is inheritance?
+10) If I have class c inherited from b & b inherited from a. All three classes a,b,c have same methods in it. How we can access the method from the a & b.
+Ans:  ob = C()
+	  ob.foo()
+	  super(C,ob).foo()
+	  super(B,ob).foo()
+11) I have one class & in __init__ mehtod I am returning none? What will happen. I want to access the methods from that class how can I access the methods?
+Ans: Returning None will work as it is. Means the object will get created & we can call the methods from the class as is.
+     But if you return any other value from the __init__ then it will give the below error.
+	 Traceback (most recent call last):
+		File "try.py", line 28, in <module>
+		ob = A(1,2)
+	 TypeError: __init__() should return None
+	 =======
+	 If you want to return any other value then you need to write it in the __new__ method.
+		class MyClass(object):
+		def __init__(self):
+			print "never called in this case"
+		def __new__(cls):
+			return 42
+
+		obj = MyClass()
+		print obj
+
+12) Exception handling- what is else in try..except..else..finally
+Ans: This else block will get executed if there are no exceptions in the try block. & there is no return statement in the try block.
+13) If i have try..except..else..finally & in the try block i am doing sys.exit. will the finally block get executed.
+Ans: If the generic or SystemExit exception is catched then the it will raise exception & then execute the finally block.
+14) If i have try..except..else..finally & in the try block i have return statement in try. will the finally block get executed.
+Ans: Then the after try finally block will be executed. It will not execute the else block.
+15)Dict - what data types we can have as key
+Ans: string, numbers, boolean, None, tuples
+16) can we have boolean types (true/false) as key. can we have none as key
+Ans: Yes we can have. true/false it stores as 0/1 as key.
+17) When we import os module. is os.pyc file get generated in current directory. what happens when it is imported.
+Ans: When we import the os module then the os.pyc file gets generated inside the folder.
+     For python3: C:\Python34\Lib\__pycache__
+	 For python2: C:\Python27\Lib
+18) If I did system exit in the program. Then what happens to the memory allocated to the variables. What is garbage collection? When it is done?
+Ans: Python uses two strategies for memory allocation reference counting and garbage collection
+	 Reference counting works by counting the number of times an object is referenced by other objects in the system.
+	 When references to an object are removed, the reference count for an object is decremented.	
+	 When the reference count becomes zero the object is deallocated.
+	 1. Maintain reference count. For every object, there is a count of the total number of references to that object. 
+	    If that count ever falls to 0, then you can immediately deallocate that object because it is no longer live.
+	 2. Periodically detect reference cycles. Deallocating when the reference count falls to 0 doesn’t work for all cases. 
+	    Consider two objects A and B, where A holds a reference to B and B holds a reference to A. This is called a reference cycle. 
+		It could be the case that these are no longer live and so that both A and B should be garbage collected. However, 
+		the reference count on both objects are not zero, so they remain alive. To get around this, 
+		CPython uses an algorithm for detecting reference cycles and deallocating objects in the cycle.
+19) Swap two diagonals of the matrix in python.
+Ans: for i, j in zip(range(len(list1)), range(len(list1[0])-1, -1, -1)):
+     list1[i][i], list1[i][j] = list1[i][j], list1[i][i]
+
+20) Swap the rows to columns in matrix.
+Ans: for i in range(len(list1)):
+		for j in range(i+1, len(list1[0])):
+			list1[i][j], list1[j][i] = list1[j][i], list1[i][j]
+			
+			
+===========================================================================================================
+************************* Primary IO ***********************************
+
+1) How kv ssd is better than block ssd & how it works.
+2) How performance is measured. what params? 
+3) What is mean IOPS? dont tell full form? What exactly does it mean?
+4) What is subet mask in network.
+5) What is gateway
+6) Explain project
+7) Python program to swap columns to row & vice versa in matrix.
+8) Explain the loging module in python? Write a logging class in python using logging
+9) One function returns the mac address of the system with vm name as input. Lab has 100 machines find if there are any duplicate mac address?
+10) What is file descriptor
+11) What is diff between direct IO & buffered IO
+12) Write test cases for the scenario. ESXi OS installation. Right from the inserting CD till the login prompt comes.
+13) Debugging - From one of the VM the IO's are very slow or performance is down. We are running dd command with which we are seeing the less performance. 
+    How you will debug the scenario.
+14) Explain pytest module
+15) Explain setup/cleanup/logging/output collection part in automation framework.
+16) How you are catching the output & errors.
+17) Write python program to execute the command on local & remote machine.
+18) Take input from the date in user defined format & validate the date.
+19) WAP : There are two directories d1 & d2. Check there are any files which has same content.
+
+=================================================================================================================
+******************************** GS Lab ******************************
+1) WAP : to validate the valid expression. Correct parenthesis. ((a+b*[w/r]*{q+e}))																
+2) WAP : Open file on remote machine & count the spaces in that file.
+3) WAP : One json file is given. Load that file in python program & then print the client name, username, password if the ip is given.
+file: {"clients": [{
+	  "name" : "client1",
+	  "value": [ 
+		{"ip": "1.1.1.1",
+		  "username" : "abc",
+		   "password": "xyx"
+		},
+		{"ip": "1.1.1.2",
+		  "username" : "abc1",
+		   "password": "xyx1"
+		}
+	]
+	},
+	{
+	  "name" : "client2",
+	  "value": [ 
+		{"ip": "1.1.1.3",
+		  "username" : "abc2",
+		   "password": "xyx2"
+		},
+		{"ip": "1.1.1.4",
+		  "username" : "abc3",
+		   "password": "xyx3"
+		}
+	]
+	}]
+	}
+4) C program : find the center of the singly linked list by travelling only once.
+Ans: point p& q to the head. then increament the p by one & q by two. 
+5) How poly morphisam achieved in the python.
+6) Can we call the child class method using the object of the base class.
+7) Robot: what is difference in the library & resource import.
+8) What dows the resource import file contains.
+9) Develope the automation framework to monitor the health of all the systems (servers, switches etc) in the lab (network).
+10)
+
+**************** Druva ***************
+1) One file is getting updated continuously. We need to get the lines that are newly added. write a python script which will give the newly added lines from the last time we ran the script.
+2) convert list to dict in one line. ex. l1=[1,2,3,4] out={1:2, 3:4}
+Ans: dict(zip(l1[::2], l1[1::2]))
+3) Find the substring in string in one line.
+
+************************************************
+Prime Number
+
+def prime(n):
+	if(n==1):
+	 return False
+	elif(n==2):
+	 return True
+	else:
+	 if(n&1==0):
+	   return False
+	 for i in range(3,int(math.sqrt(n))+1,2):
+	   if(n%i==0):
+		 return False
+	 else:
+	   return True
+------------------------------------------------
+Fibbonaci
+
+def fib(n):
+  a,b = 0,1
+  while(a<n):
+    yield a
+    a,b = b,a+b
+--------------------------------
+
+Fibbonaci with recursion
+
+def fibonacci(n):
+    if(n <= 1):
+        return n
+    else:
+        return(fibonacci(n-1) + fibonacci(n-2))
+		
+n = int(input("Enter number of terms:"))
+print("Fibonacci sequence:")
+for i in range(n):
+    print (fibonacci(i))
+----------------------------------------
+Factorial
+
+def fact1(n):
+  fa=1
+  for i in range(n,1,-1):
+    fa *= i
+  return fa
+----------------------------------------
+
+Factorial with recursion
+
+def Factorial(number):
+    if number < 0:
+        return "Cannot Find Factrial of Negative Number"
+    if number == 0 or number == 1:
+        return 1
+    return number*Factorial(number - 1)
+----------------------------------------------------

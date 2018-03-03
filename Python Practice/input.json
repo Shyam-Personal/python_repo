@@ -1,0 +1,31 @@
+{"clients": [{
+	  "name" : "client1",
+	  "value": [ 
+		{"ip": "1.1.1.1",
+		  "username" : "abc",
+		   "password": "xyx"
+		},
+		{"ip": "1.1.1.2",
+		  "username" : "abc1",
+		   "password": "xyx1"
+		}
+	]
+	},
+	{
+	  "name" : "client2",
+	  "value": [ 
+		{"ip": "1.1.1.3",
+		  "username" : "abc2",
+		   "password": "xyx2"
+		},
+		{"ip": "1.1.1.4",
+		  "username" : "abc3",
+		   "password": "xyx3"
+		},
+		{"ip": "1.1.1.5",
+		  "username" : "abc4",
+		   "password": "xyx4"
+		}
+	]
+	}]
+	}
