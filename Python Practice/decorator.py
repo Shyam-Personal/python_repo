@@ -90,7 +90,7 @@ def my_function():
 
 
 print(my_function())
-
+'''
 from time import sleep
 
 
@@ -136,3 +136,4 @@ for i in range(len(list1)):
 	for j in range(len(list1[0])):
 		print(list2[i][j], end=" ")
 	print()
+'''

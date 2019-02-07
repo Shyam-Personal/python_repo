@@ -9,7 +9,7 @@ for i in range(len(input2)-1):
   if(abs(input2[i+1]-input2[i]) == 1):
     cnt += 1
     continue
-  cnt = 2
+  cnt = 0
 print(long_seq)
 '''
 import logging

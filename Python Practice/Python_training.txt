@@ -1,0 +1,119 @@
+[‎05/‎10/‎16 08:53 AM] Shyam Deshmukh: 
+#!/usr/bin/python
+If you want to run by double click.
+Shebang line.
+Where to look for interpreter executable
+=======
+Compilation process
+
+tokenization
+syntax check
+meaning
+intermediate code
+optimization
+machine understnadable format
+======
+python compiled + interpreted
+==
+pylint/pep8 tool used to enforce coding standards
+== 
+Character & string are same in python. Python treats both as strings.
+======
+
+Data types
+
+Dynamically typed
+a=10
+type int
+a="hello"
+type string
+======================
+a=10
+id(a) = returns memory location
+==
+a=257
+b=257
+uses different memory
+-5 to 256 are preloaded intergers in python
+=======
+python follows reference model not value model
+==
+Python by default does shallow copy
+========
+
+"Hi"*3  -> "HiHiHi"
+=====
+is will check identity & == will cehck value
+=====
+__name__ -- "__main__"
+reusable module
+
+==================================
+Assignment
+
+write program to accept no & print factorial
+Write optimized program accept no & print its prime or not.
+WAP to accept no & check if even or odd without using arithmatic operations.
+WAP to accept no & print its reverse. 
+
+bhattadjeetendra@gmail.com
+*****************************************************************************************
+
+
+Text - set of instructions
+Data - global, static, local
+Stack - from where to start & size
+
+from --- import * ->  loads all as if you you have written the function in your code
+import --- -> This will import the function names only
+
+enumerate - inexing ptints index
+
+any() -> returns true if iterable
+
+Assignment
+WAP to accept 2 char search & replace .
+
+====================================================================
+
+implement queue
+range & xrange
+bytearray
+defaultdict
+=============================================================================
+
+OOP
+
+-Abstraction :- Hiding of data or functionality :- hiding implementation
+-Encapsulation
+-Polymorphism :- One interface Multiple methods
+-Inheritance
+
+Early binding - compile time binding
+Late binding - run time binding
+--------------------------------------------
+
+Object :- instance of class
+-Identity
+-State
+-Responsibility
+-Behaviour
+
+-----------------------------------------------
+Constructor : gets implicitly invoked on object creation
+Every function in class will have atleast one argument i.e. calling object i.e. self
+Self : reference to calling object
+******************
+accessing private variable : 
+_human__name
+---------------------------------------
+
+Multiple inheritance
+
+Base - print method
+========================================================
+
+Pickle used for serializing
+
+dumps -> stream of bytes serialize
+loads -> stram of bytes deserialize

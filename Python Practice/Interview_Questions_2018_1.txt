@@ -1,0 +1,21 @@
+AFour Technologies
+
+WAP to find the count of all capital letters in file.
+we have folder1->file1 & folder2->file2. In file2 we want to import file1. how we can do that.
+How we can import the entire file
+Can we import specific functions from file
+what is iterators & generators
+list all the keys of the dict inside dict i.e. nested dict
+what HA, availability, reliability
+clustering..quorum....what is the use of quorum
+Deployment scenario.....who handles the deployment..process of deployment..testing process
+linux commands...basic cmds
+vi commands
+awk,sed
+difference between os module & subprocess
+When to use os & subprocess
+Which is better.
+Tell me one scenario where we can not use os module & we have to use only subprocess or vice versa.
+WAP to show the addition of odd & even numbers from list
+Interactive ssh session
+paramiko

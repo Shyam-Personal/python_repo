@@ -1,3 +1,40 @@
+=================== EMC ================================
+Python:
+1) WAP to reverse the string?
+2) General in place logic to reverse the string?
+3) WAP to find the temp in a list from file? 
+Ex. One file contains some data. The data in which we are interested is Temp:30. We want the temp (numbers only) in the list as output.
+4) WAP to find the unique numbers from list? In-place i.e. dont use any other data types or any other list
+5) WAP to bucketize the numbers in the given list
+I/P = [13,14,15,34,36,88888,234,5434]
+O/P = 10-19 		13,14,15
+	  30-39 		34,36
+	  230-239 		234
+	  5430-5439 	5434
+	  88880-88889 	88888
+6) Explain the inheritance with example. Write class A & inherit the class B from A.
+7) In above que we have one instance variable in the class A. How we can update the value of the that variable from the object of the class B.
+8) What is differnce between shallow copy & deep copy. How we can do deep copy. There are three modules in copy module. What is use of each module.
+9) What is the differnce between os.system & subprocess? What is the return value of the os.system
+10) Explain the automation framework
+11) Multiprocessing & multi threading. which is better & why
+12) Explain the logic of sorting the elements of list. Without using the in built method and without using the standard algorithms such as bubble sort, selection sort etc.
+13) 
+
+Storage:
+1) Difference between FC & iSCSI
+2) Can three persons open a file in write mode. If 1 is writing  in 0-500, 2 in 500-1000 & 3 in 1000-1500 locations.
+3) What is storage system. How you will test storage system
+4) What is DU & DL? DU - Data Unavaiability, DL - Data Loss
+5) What are the scenarios for the DU
+6) Explain projects
+7) You have one usb drive. you connected to your laptop written some data & removed the usb.
+Now after a month you again connected the usb back to laptop. now you need check whether the data is correct or not. how you will do it.
+You dont know the original data, you dont have checksum, you can't do it using modifcation time because I have done vi & saved the file now.
+8) What is volume manager. Why it is required.
+9) How data flow happens in your system. You are writing the a.txt file explain in detail
+10) 
+
 ================== Calsoft ===============================
 1) Data types in python
 Ans: String, tuples, numbers, list, sets, dictionary
@@ -27,7 +64,7 @@ Ans: Answer: a tuple made out of constant literals can easily be identified by t
 		10000000 loops, best of 3: 0.0527 usec per loop
 		
 3) what is set? Is mutable or immutable? How we can you make the set immutable?
-Ans: Set is mutable. We can use frozensets in python. Frozenset is type of set whioch is immutable.
+Ans: Set is mutable. We can use frozensets in python. Frozenset is type of set which is immutable.
 4) What is multi threading & multi processing? Which is faster?
 5) Python is interpreted or compiled language?
 Ans: Python is byte code interpreted language. Java is interpreted & c is compiled language
@@ -75,7 +112,7 @@ Ans: Yes we can have. true/false it stores as 0/1 as key.
 17) When we import os module. is os.pyc file get generated in current directory. what happens when it is imported.
 Ans: When we import the os module then the os.pyc file gets generated inside the folder.
      For python3: C:\Python34\Lib\__pycache__
-	 For python2: C:\Python27\Lib
+	 For python2: C:\Python27\Lib			/usr/lib64/python2.7/os.py
 18) If I did system exit in the program. Then what happens to the memory allocated to the variables. What is garbage collection? When it is done?
 Ans: Python uses two strategies for memory allocation reference counting and garbage collection
 	 Reference counting works by counting the number of times an object is referenced by other objects in the system.
@@ -168,6 +205,18 @@ Ans: point p& q to the head. then increament the p by one & q by two.
 2) convert list to dict in one line. ex. l1=[1,2,3,4] out={1:2, 3:4}
 Ans: dict(zip(l1[::2], l1[1::2]))
 3) Find the substring in string in one line.
+
+4) Remove the repeated character in the given string except the first occurrence and Except the vowels.
+v=['a','e','i','o','u']
+d=[]
+o=""
+for i in s:
+	if i in v:
+		o+=i
+	elif i not in d:
+		d.append(i)
+		o += i
+print(o)
 
 ************************************************
 Prime Number
